@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ .Values.app.namespace | default "default" }}
+  name: {{ .Values.app.name }}
+  labels:
+    name: {{ .Values.app.name }}
+spec:
+  selector:
+    matchLabels:
+      name: {{ .Values.app.name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 40%
+  progressDeadlineSeconds: 300
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        name: {{ .Values.app.name }}
+        admission.datadoghq.com/enabled: 'true'
+    spec:
+      containers:
+        - name: {{ .Values.app.name }}
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.app.image_pull_policy | default "IfNotPresent" }}
+          env:
+          - name: role
+            value: "puma"
+          ports:
+            - containerPort: {{ .Values.app.port }}

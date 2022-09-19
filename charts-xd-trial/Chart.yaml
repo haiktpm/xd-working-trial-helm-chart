@@ -1,0 +1,10 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Helm chart for xd trial
+name: xd-trial
+version: 0.1.0
+dependencies:
+  - name: postgresql
+    version: 11.9.1
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled

@@ -1,0 +1,13 @@
+replicaCount: 1
+app:  
+  namespace: xd-trial
+  name: xd-trial
+  port: 80
+  image_pull_policy: IfNotPresent
+image:
+  name: nginx
+  tag: "latest"
+service:
+  type: ClusterIP
+postgresql:
+  enabled: true
