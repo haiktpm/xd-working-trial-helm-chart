@@ -5,8 +5,8 @@ app:
   port: 3032
   image_pull_policy: IfNotPresent
 image:
-  name: nginx
-  tag: "ldatest"
+  name: 133080210133.dkr.ecr.ap-southeast-1.amazonaws.com/xd-ecr
+  tag: ""
 service:
   type: ClusterIP
 postgresql:
