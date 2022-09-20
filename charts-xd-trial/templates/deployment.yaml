@@ -20,6 +20,7 @@ spec:
   template:
     metadata:
       labels:
+        env: test
         name: {{ .Values.app.name }}
         admission.datadoghq.com/enabled: 'true'
     spec:
