@@ -8,6 +8,6 @@ image:
   name: 133080210133.dkr.ecr.ap-southeast-1.amazonaws.com/xd-ecr
   tag: "$IMAGE_TAG"
 service:
-  type: ClusterIP
+  type: LoadBalancer
 postgresql:
   enabled: true
