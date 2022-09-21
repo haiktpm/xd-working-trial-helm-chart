@@ -6,7 +6,7 @@ app:
   image_pull_policy: IfNotPresent
 image:
   name: 133080210133.dkr.ecr.ap-southeast-1.amazonaws.com/xd-ecr
-  tag: "9a218041"
+  tag: "a33ef094"
 service:
   type: ClusterIP
 postgresql:
