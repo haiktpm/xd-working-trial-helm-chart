@@ -6,7 +6,7 @@ app:
   image_pull_policy: IfNotPresent
 image:
   name: 133080210133.dkr.ecr.ap-southeast-1.amazonaws.com/xd-ecr
-  tag: "aa90c8bf"
+  tag: "591714a5"
 service:
   type: LoadBalancer
 postgresql:
