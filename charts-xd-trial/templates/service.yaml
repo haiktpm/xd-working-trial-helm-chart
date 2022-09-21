@@ -5,11 +5,9 @@ metadata:
   name: {{ .Values.app.name }}
   namespace: {{ .Values.app.namespace | default "default" }}
   labels:
-    env: {{ .Values.app.env }}
     name: {{ .Values.app.name }}
 spec:
   selector:
-    env: {{ .Values.app.env }}
     name: {{ .Values.app.name }}
   type: {{ .Values.service.type | default "ClusterIP" }}
   ports:
